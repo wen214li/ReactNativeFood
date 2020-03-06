@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import SearchBar from "../components/SearchBar";
 import yelp from "../api/yelp";
 
-const SearchScreen = async () => {
+const SearchScreen = () => {
   const [key, setKey] = useState("");
   const [results, setResults] = useState([]);
 
@@ -21,7 +21,7 @@ const SearchScreen = async () => {
   return (
     <View>
       <SearchBar term={key} onTermChange={setKey} onTermSubmit={searchApi} />
-      <Text>We have found results.</Text>
+      <Text>We have found {results.length} results.</Text>
     </View>
   );
 };
